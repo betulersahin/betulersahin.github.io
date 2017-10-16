@@ -1,0 +1,748 @@
+//colors
+$color_mountain_meadow_approx: #18bc9c;
+$white: #fff;
+$theme_color: #7a3a70;
+$color_mountain_meadow_90_approx: rgba(24, 188, 156, .9);
+$color_gallery_approx: #eee;
+$color_ebony_clay_approx: #233140;
+$color_shark_approx: #1a242f;
+$color_mirage_approx: #161f29;
+$color_elf_green_approx: #128f76;
+//fonts
+$font_0: Lato;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: Arial;
+$font_4: sans-serif;
+$font_5: Montserrat;
+$font_6: FontAwesome;
+//@extend-elements
+//original selectors
+//h1, h2, h3, h4, h5, h6
+%extend_1 {
+  font-family: $font_5, $font_1, $font_2, $font_3, $font_4;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+//original selectors
+//hr.star-light, hr.star-primary
+%extend_2 {
+  padding: 0;
+  border: none;
+  border-top: solid 5px;
+  text-align: center;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+
+//original selectors
+//hr.star-light:after, hr.star-primary:after
+%extend_3 {
+  content: "\f005";
+  font-family: $font_6;
+  display: inline-block;
+  position: relative;
+  top: -.8em;
+  font-size: 2em;
+  padding: 0 .25em;
+}
+
+body {
+  font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 20px;
+  &.small {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: $color_mountain_meadow_approx;
+  outline: 0;
+  &.active {
+    color: $color_mountain_meadow_approx;
+    outline: 0;
+  }
+  &:active {
+    color: $color_mountain_meadow_approx;
+    outline: 0;
+  }
+  &:focus {
+    color: $color_mountain_meadow_approx;
+    outline: 0;
+  }
+  &:hover {
+    color: $color_mountain_meadow_approx;
+    outline: 0;
+  }
+}
+
+h1 {
+  @extend %extend_1;
+}
+
+h2 {
+  @extend %extend_1;
+}
+
+h3 {
+  @extend %extend_1;
+}
+
+h4 {
+  @extend %extend_1;
+}
+
+h5 {
+  @extend %extend_1;
+}
+
+h6 {
+  @extend %extend_1;
+}
+
+hr {
+  &.star-light {
+    @extend %extend_2;
+    border-color: $white;
+    &:after {
+      @extend %extend_3;
+      background-color: $color_mountain_meadow_approx;
+      color: $white;
+    }
+  }
+  &.star-primary {
+    @extend %extend_2;
+    border-color: $theme_color;
+    &:after {
+      @extend %extend_3;
+      background-color: $white;
+      color: $theme_color;
+    }
+  }
+}
+
+.navbar-custom {
+  font-family: $font_5, $font_1, $font_2, $font_3, $font_4;
+  text-transform: uppercase;
+  background: $theme_color;
+  font-weight: 700;
+  border: none;
+  .navbar-brand {
+    color: $white;
+    &.active {
+      color: $white;
+    }
+    &:active {
+      color: $white;
+    }
+    &:focus {
+      color: $white;
+    }
+    &:hover {
+      color: $white;
+    }
+    img {
+      height: 1em;
+    }
+  }
+  .navbar-nav {
+    letter-spacing: 1px;
+    li {
+      a {
+        color: $white;
+        &:hover {
+          color: $color_mountain_meadow_approx;
+          outline: 0;
+        }
+        &:active {
+          color: $white;
+        }
+        &:focus {
+          color: $white;
+        }
+      }
+      &.active a {
+        color: $white;
+        background: $color_mountain_meadow_approx;
+        &:active {
+          color: $white;
+          background: $color_mountain_meadow_approx;
+        }
+        &:focus {
+          color: $white;
+          background: $color_mountain_meadow_approx;
+        }
+        &:hover {
+          color: $white;
+          background: $color_mountain_meadow_approx;
+        }
+      }
+    }
+  }
+  .navbar-toggle {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-color: $white;
+    &:focus {
+      background-color: $color_mountain_meadow_approx;
+      color: $white;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:hover {
+      background-color: $color_mountain_meadow_approx;
+      color: $white;
+      border-color: $color_mountain_meadow_approx;
+    }
+  }
+  a:focus {
+    outline: 0;
+  }
+}
+
+header {
+  color: #000;
+  text-align: center;
+  background: $white;
+  .intro-text {
+    .skills {
+      font-family: $font_5, $font_1, $font_2, $font_3, $font_4;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 700;
+      font-size: 2em;
+    }
+  }
+  .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  img {
+    display: block;
+    max-width: 400px !important;
+    margin: 0 auto 20px;
+  }
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+@media(min-width:768px) {
+  header {
+    .container {
+      padding-top: 200px;
+      padding-bottom: 100px;
+    }
+    .intro-text {
+      .name {
+        font-size: 4.75em;
+      }
+      .skills {
+        font-size: 1.75em;
+      }
+    }
+  }
+  .navbar-custom {
+    padding: 25px 0; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: padding .3s;
+    .navbar-brand {
+      font-size: 2em; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+      transition: all .3s;
+    }
+    &.affix {
+      padding: 10px 0;
+      .navbar-brand {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+section {
+  padding: 100px 0;
+  h2 {
+    margin: 0;
+    font-size: 3em;
+  }
+  &.success {
+    background: $color_mountain_meadow_approx;
+    color: $white;
+  }
+}
+
+@media(max-width:767px) {
+  section {
+    padding: 75px 0;
+    &.first {
+      padding-top: 75px;
+    }
+  }
+}
+
+#portfolio {
+  .portfolio-item {
+    margin: 0 0 15px;
+    right: 0;
+    .portfolio-link {
+      display: block;
+      position: relative;
+      max-width: 400px;
+      margin: 0 auto;
+      .caption {
+        background: $color_mountain_meadow_90_approx;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all ease .5s;
+        &:hover {
+          opacity: 1;
+        }
+        .caption-content {
+          position: absolute;
+          width: 100%;
+          height: 20px;
+          font-size: 20px;
+          text-align: center;
+          top: 50%;
+          margin-top: -12px;
+          color: $white;
+          i {
+            margin-top: -12px;
+          }
+          h3 {
+            margin: 0;
+          }
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  * {
+    z-index: 2;
+  }
+}
+
+.btn-social {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 2px solid $white; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.scroll-top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  z-index: 1049;
+  .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 100%;
+    line-height: 28px;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+@media(min-width:767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+
+.floating-label-form-group {
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: .5em;
+  border-bottom: 1px solid $color_gallery_approx;
+  input {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: none; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+    font-size: 1.5em;
+    background: 0 0; //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none!important;
+    resize: none;
+  }
+  textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: none; //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0;
+    font-size: 1.5em;
+    background: 0 0; //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none!important;
+    resize: none;
+  }
+  label {
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0;
+    font-size: .85em;
+    line-height: 1.764705882em;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: top .3s ease, opacity .3s ease;
+  }
+  &:not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid $color_gallery_approx;
+  }
+}
+
+footer {
+  color: $white;
+  h3 {
+    margin-bottom: 30px;
+  }
+  .footer-above {
+    padding-top: 50px;
+    background-color: $theme_color;
+  }
+  .footer-col {
+    margin-bottom: 50px;
+  }
+  .footer-below {
+    padding: 25px 0;
+    background-color: $color_ebony_clay_approx;
+  }
+}
+
+.btn-outline {
+  color: $white;
+  font-size: 20px;
+  border: 2px solid $white;
+  background: 0 0; //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all .3s ease-in-out;
+  margin-top: 15px;
+  &.active {
+    color: $color_mountain_meadow_approx;
+    background: $white;
+    border: 2px solid $white;
+  }
+  &:active {
+    color: $color_mountain_meadow_approx;
+    background: $white;
+    border: 2px solid $white;
+  }
+  &:focus {
+    color: $color_mountain_meadow_approx;
+    background: $white;
+    border: 2px solid $white;
+  }
+  &:hover {
+    color: $color_mountain_meadow_approx;
+    background: $white;
+    border: 2px solid $white;
+  }
+}
+
+.btn-primary {
+  color: $white;
+  background-color: $theme_color;
+  border-color: $theme_color;
+  font-weight: 700;
+  &.active {
+    background-image: none;
+    color: $white;
+    background-color: $color_shark_approx;
+    border-color: $color_mirage_approx;
+  }
+  &:active {
+    background-image: none;
+    color: $white;
+    background-color: $color_shark_approx;
+    border-color: $color_mirage_approx;
+  }
+  &:focus {
+    color: $white;
+    background-color: $color_shark_approx;
+    border-color: $color_mirage_approx;
+  }
+  &:hover {
+    color: $white;
+    background-color: $color_shark_approx;
+    border-color: $color_mirage_approx;
+  }
+  &.disabled {
+    background-color: $theme_color;
+    border-color: $theme_color;
+    &.active {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:active {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:focus {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:hover {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+  }
+  .badge {
+    color: $theme_color;
+    background-color: $white;
+  }
+}
+
+.btn-success {
+  color: $white;
+  background-color: $color_mountain_meadow_approx;
+  border-color: $color_mountain_meadow_approx;
+  font-weight: 700;
+  &.active {
+    background-image: none;
+    color: $white;
+    background-color: $color_elf_green_approx;
+    border-color: $color_elf_green_approx;
+  }
+  &:active {
+    background-image: none;
+    color: $white;
+    background-color: $color_elf_green_approx;
+    border-color: $color_elf_green_approx;
+  }
+  &:focus {
+    color: $white;
+    background-color: $color_elf_green_approx;
+    border-color: $color_elf_green_approx;
+  }
+  &:hover {
+    color: $white;
+    background-color: $color_elf_green_approx;
+    border-color: $color_elf_green_approx;
+  }
+  &.disabled {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+    &.active {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:active {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:focus {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:hover {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+  }
+  .badge {
+    color: $color_mountain_meadow_approx;
+    background-color: $white;
+  }
+}
+
+.btn-primary[disabled] {
+  background-color: $theme_color;
+  border-color: $theme_color;
+  &.active {
+    background-color: $theme_color;
+    border-color: $theme_color;
+  }
+  &:active {
+    background-color: $theme_color;
+    border-color: $theme_color;
+  }
+  &:focus {
+    background-color: $theme_color;
+    border-color: $theme_color;
+  }
+  &:hover {
+    background-color: $theme_color;
+    border-color: $theme_color;
+  }
+}
+
+fieldset[disabled] {
+  .btn-primary {
+    background-color: $theme_color;
+    border-color: $theme_color;
+    &.active {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:active {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:focus {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+    &:hover {
+      background-color: $theme_color;
+      border-color: $theme_color;
+    }
+  }
+  .btn-success {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+    &.active {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:active {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:focus {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+    &:hover {
+      background-color: $color_mountain_meadow_approx;
+      border-color: $color_mountain_meadow_approx;
+    }
+  }
+}
+
+.btn-success[disabled] {
+  background-color: $color_mountain_meadow_approx;
+  border-color: $color_mountain_meadow_approx;
+  &.active {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+  }
+  &:active {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+  }
+  &:focus {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+  }
+  &:hover {
+    background-color: $color_mountain_meadow_approx;
+    border-color: $color_mountain_meadow_approx;
+  }
+}
+
+.btn {
+  &.active {
+    outline: 0;
+  }
+  &:active {
+    outline: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.portfolio-modal {
+  .modal-content {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0; //Instead of the line below you could use @include background-clip($clip)
+    background-clip: border-box; //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+    border: none;
+    min-height: 100%;
+    padding: 100px 0;
+    text-align: center;
+    h2 {
+      margin: 0;
+      font-size: 3em;
+    }
+    img {
+      margin-bottom: 30px;
+    }
+    .item-details {
+      margin: 30px 0;
+    }
+  }
+  .close-modal {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    &:hover {
+      opacity: .3;
+    }
+    .lr {
+      height: 75px;
+      width: 1px;
+      margin-left: 35px;
+      background-color: $theme_color; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+      transform: rotate(45deg);
+      z-index: 1051;
+      .rl {
+        height: 75px;
+        width: 1px;
+        background-color: $theme_color; //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(90deg);
+        z-index: 1052;
+      }
+    }
+  }
+  .modal-backdrop {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.floating-label-form-group-with-value label {
+  top: 0;
+  opacity: 1;
+}
+
+.floating-label-form-group-with-focus label {
+  color: $color_mountain_meadow_approx;
+}
+
+form .row:first-child .floating-label-form-group {
+  border-top: 1px solid $color_gallery_approx;
+}
+
+.open .dropdown-toggle {
+  &.btn-primary {
+    background-image: none;
+    color: $white;
+    background-color: $color_shark_approx;
+    border-color: $color_mirage_approx;
+  }
+  &.btn-success {
+    background-image: none;
+    color: $white;
+    background-color: $color_elf_green_approx;
+    border-color: $color_elf_green_approx;
+  }
+}
